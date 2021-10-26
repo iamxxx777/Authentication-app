@@ -1,16 +1,23 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #252329;
+  color: #E0E0E0;
+  font-family: "Noto sans", sans-serif;
+  width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  font-style: normal;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+}
+
+.footer div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer div p {
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.035em;
+    color: #BDBDBD;
+}
+
+.footer div p a {
+    text-decoration: underline;
+}
+
+.footer div p a:hover {
+    color: #2F80ED;
+}
+
+
+
+@media (min-width: 700px) {
+    .footer {
+        width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .prof .footer {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+

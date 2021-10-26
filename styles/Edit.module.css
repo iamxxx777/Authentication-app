@@ -1,0 +1,224 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+}
+
+.prof {
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.profile_edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.profile_edit > h1 {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.profile_edit > h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+}
+
+.profile_info {
+    width: 100%;
+}
+
+.profile_info form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    width: 100%;
+}
+
+.form_img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form_img_div {
+    margin-right: 20px;
+    position: relative;
+}
+
+.form_img_div img {
+    width: 52px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.img_text p {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #E0E0E0;
+    text-transform: uppercase;
+}
+
+.form_control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.form_control label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #BDBDBD;
+    margin-bottom: 0.2rem;
+}
+
+.form_control input,
+.form_control textarea {
+    width: 100%;
+    border: 1px solid #BDBDBD;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+    color: #828282;
+    outline: none;
+    font-family: inherit;
+    height: 48px;
+    padding: 0 1rem;
+    background-color: transparent;
+}
+
+.form_control input::placeholder,
+.form_control textarea::placeholder {
+    font-size: 13px;
+}
+
+.form_control textarea {
+    height: 92px;
+    padding: 1rem;
+    resize: none;
+}
+
+.profile_info form button {
+    width: 82px;
+    height: 38px;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+    background: #2F80ED;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 1.5rem;
+}
+
+
+
+@media (min-width: 480px) {
+    .profile_edit {
+        padding: 0 1rem;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .container {
+        padding: 1rem 3rem;
+    }
+
+    .profile, .footer {
+        width: 540px;
+        margin: 0 auto;
+    }
+
+    .profile_info {
+        border: solid 1px #616161;
+        border-radius: 8px;
+        border-bottom: none;
+    }
+
+    .profile_edit {
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .prof .footer {
+        width: 100%;
+    }
+    
+    .form_control, .form_img {
+        padding: 0 2rem;
+    }
+
+    .profile_info {
+        margin-top: 1.5rem;
+        border-bottom: solid 1px #616161;
+    }
+
+    .profile_info form {
+        padding-top: 2rem;
+    }
+
+    .form_control input,
+    .form_control textarea {
+        width: 412px;
+    }
+
+    .form_control input:focus,
+    .form_control textarea:focus {
+        border-color: #2F80ED;
+    }
+
+    .profile_info form button {
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+@media (min-width: 900px) {
+    .profile_edit {
+        width: 750px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .prof .footer {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+

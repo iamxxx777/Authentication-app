@@ -1,0 +1,113 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* padding: 0 3rem; */
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.user div {
+    margin-left: 8px;
+}
+
+.user_img img {
+    width: 32px;
+    height: 34px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.name,
+.drop {
+    display: none;
+}
+
+.name h3 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.035em;
+}
+
+.drop {
+    position: relative;
+}
+
+.drop button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+    color: inherit;
+    transform: rotate(0deg);
+}
+
+.drop .active {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 45px;
+    left: -150px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(37, 35, 41, 0.05);
+    border-radius: 12px;
+    padding: 0.4rem;
+    width: 168px;
+    z-index: 1;
+}
+
+.dropdown ul li {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 10px;
+    padding: 0.4rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.dropdown ul li:hover {
+    background-color: #18171a;
+}
+
+.dropdown ul hr {
+    color: #BDBDBD;
+    margin: 5px 0;
+}
+
+.dropdown ul li p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.dropdown ul .logout {
+    padding: 0.7rem 0.4rem;
+    color: #EB5757;
+}
+
+
+@media (min-width: 700px) {
+    .name,
+    .drop {
+        display: initial;
+    }
+}
