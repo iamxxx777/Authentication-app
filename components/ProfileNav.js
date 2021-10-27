@@ -1,9 +1,18 @@
 import { useState } from "react"
+import { signOut, useSession } from "next-auth/client"
+import Link from "next/link"
 import navStyles from "../styles/Nav.module.css"
 
 const ProfileNav = () => {
 
     const [drop, setDrop] = useState(false);
+
+    const [session] = useSession();
+
+    const logOut = async (e) => {
+        e.preventDefault();
+        await signOut({ callbackUrl: 'http://localhost:3000/signup' });
+    }
 
     return (
         <header className={navStyles.header}>
@@ -13,11 +22,11 @@ const ProfileNav = () => {
 
                 <div className={navStyles.user}>
                     <div className={navStyles.user_img}>
-                        <img src="/Mio.jpg" alt="user image" />
+                        <img src={session ? `${session.user.image}` : "/Mio.jpg"} alt="user image" />
                     </div>
 
                     <div className={navStyles.name}>
-                        <h3>Hope Tomiwa</h3>
+                        <h3>{session ? `${session.user.name || session.user.email}` : "John Doe"}</h3>
                     </div>
 
                     <div className={navStyles.drop}>
@@ -25,10 +34,21 @@ const ProfileNav = () => {
                         {drop && 
                             <div className={navStyles.dropdown}>
                                 <ul>
-                                    <li><i className="fa fa-user-circle" aria-hidden="true"></i> <p>My Profile</p></li>
-                                    <li><i className="fa fa-users" aria-hidden="true"></i> <p>Group Chat</p></li>
+                                    <li>
+                                        <Link href="/profile"><div><i className="fa fa-user-circle" aria-hidden="true"></i> <p>My Profile</p></div></Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/"><div><i className="fa fa-users" aria-hidden="true"></i> <p>Group Chat</p></div></Link>
+                                    </li>
                                     <hr />
-                                    <li className={navStyles.logout}><i className="fa fa-sign-out" aria-hidden="true"></i> <p>Logout</p></li>
+                                    <li className={navStyles.logout}>
+                                        <a href="/api/auth/signout" onClick={(e) => logOut(e)}>
+                                            <div>
+                                                <i className="fa fa-sign-out" aria-hidden="true"></i> 
+                                                <p>Logout</p>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         }

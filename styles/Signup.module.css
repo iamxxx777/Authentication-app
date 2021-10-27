@@ -53,6 +53,16 @@
     flex-direction: column;
 }
 
+.form small {
+    margin-bottom: 0.5rem;
+    color: #eb5757;
+    background-color: rgba(235, 87, 87, 0.3);
+    padding: 0.4rem;
+    width: 100%;
+    text-align: left;
+
+}
+
 .form_control {
     position: relative;
     margin-bottom: 0.8rem;

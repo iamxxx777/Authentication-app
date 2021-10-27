@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.user div {
+.user > div {
     margin-left: 8px;
 }
 
@@ -75,17 +75,22 @@
 
 .dropdown ul li {
     list-style-type: none;
+    cursor: pointer;
+}
+
+.dropdown ul li div {
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 10px;
     padding: 0.4rem;
     border-radius: 8px;
     transition: 0.3s ease;
-    cursor: pointer;
 }
 
-.dropdown ul li:hover {
-    background-color: #18171a;
+
+.dropdown ul li div:hover {
+    background-color: #BDBDBD;
+    color: #111;
 }
 
 .dropdown ul hr {
@@ -93,15 +98,19 @@
     margin: 5px 0;
 }
 
-.dropdown ul li p {
+.dropdown ul li div p {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
 }
 
-.dropdown ul .logout {
+.dropdown ul .logout div {
     padding: 0.7rem 0.4rem;
     color: #EB5757;
+}
+
+.dropdown ul .logout div:hover {
+    background-color: #EB5757;
 }
 
 

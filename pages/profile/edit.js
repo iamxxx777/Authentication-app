@@ -1,16 +1,34 @@
+import { useSession } from "next-auth/client"
+import Link from "next/link"
+
 import ProfileNav from "../../components/ProfileNav"
 import ProfileFooter from "../../components/ProfileFooter"
 import Meta from "../../components/Meta"
+import Unauthorized from '../../components/UnAuthorized'
+
 import editStyles from "../../styles/Edit.module.css"
 
 
 const Edit = () => {
+
+    const [session] = useSession();
+
     return (
         <div className={editStyles.container}>
-            <Meta title={"Hope's Profile"} />
+            <Meta title={`${session && session.user.name}'s Profile`} />
             <ProfileNav />
 
             <main className={editStyles.prof}>
+                {!session && <Unauthorized /> }
+
+                {session && (         
+                <>       
+                <Link href="/profile">
+                    <div className={editStyles.back}>
+                        <i className="fa fa-chevron-left" aria-hidden="true"></i>
+                        <span>Back</span>
+                    </div>
+                </Link>
                 <section className={editStyles.profile_edit}>
                     <h1>Change Info</h1>
                     <h3>Changes will be reflected to every services</h3>
@@ -19,7 +37,7 @@ const Edit = () => {
                         <form action="#">
                             <div className={editStyles.form_img}>
                                 <div className={editStyles.form_img_div}>
-                                    <img src="/Mio.jpg" alt="user image" />
+                                    <img src={session.user.image} alt={`${session.user.name} image`} />
                                 </div>
                                 <div className={editStyles.img_text}>
                                     <p>Change Photo</p>
@@ -51,6 +69,8 @@ const Edit = () => {
                         </form>
                     </div>
                 </section>
+                </>
+                )}
 
                 <ProfileFooter />
             </main>

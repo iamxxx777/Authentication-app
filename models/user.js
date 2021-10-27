@@ -13,7 +13,7 @@ const userSchema = new Schema({
     password: {
         type: String,
     },
-    imageUrl: {
+    image: {
         type: String,
         default: "https://res.cloudinary.com/iamxxx777/image/upload/v1626707838/hlwtoipgbjgim8pdelgr.jpg",
     },

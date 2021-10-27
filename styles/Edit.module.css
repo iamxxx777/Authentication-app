@@ -13,6 +13,24 @@
     width: 100%;
 }
 
+.back {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #2D9CDB;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.back i {
+    margin-right: 8px;
+}
+
 .profile_edit {
     display: flex;
     flex-direction: column;
@@ -153,28 +171,16 @@
         margin: 0 auto;
     }
 
-    .profile_info {
+    .profile_edit {
         border: solid 1px #616161;
         border-radius: 8px;
-        border-bottom: none;
-    }
-
-    .profile_edit {
-        padding: 0;
+        padding: 0 2rem;
         margin-bottom: 1rem;
+        padding-top: 1.5rem;
     }
 
     .prof .footer {
         width: 100%;
-    }
-    
-    .form_control, .form_img {
-        padding: 0 2rem;
-    }
-
-    .profile_info {
-        margin-top: 1.5rem;
-        border-bottom: solid 1px #616161;
     }
 
     .profile_info form {
@@ -192,7 +198,6 @@
     }
 
     .profile_info form button {
-        margin-left: 2rem;
         margin-bottom: 2rem;
     }
 }
