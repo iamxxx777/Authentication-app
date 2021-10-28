@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { signOut, useSession } from "next-auth/client"
 import Link from "next/link"
+import { toast } from "react-toastify"
+
 import navStyles from "../styles/Nav.module.css"
 
-const ProfileNav = () => {
+const ProfileNav = ({ src, name }) => {
 
     const [drop, setDrop] = useState(false);
 
@@ -12,6 +14,10 @@ const ProfileNav = () => {
     const logOut = async (e) => {
         e.preventDefault();
         await signOut({ callbackUrl: 'http://localhost:3000/signup' });
+
+        setTimeout(() => {
+            toast.success('Logout successful')
+        }, 2500);
     }
 
     return (
@@ -22,11 +28,11 @@ const ProfileNav = () => {
 
                 <div className={navStyles.user}>
                     <div className={navStyles.user_img}>
-                        <img src={session ? `${session.user.image}` : "/Mio.jpg"} alt="user image" />
+                        <img src={src ? src : "/Mio.jpg"} alt="user image" />
                     </div>
 
                     <div className={navStyles.name}>
-                        <h3>{session ? `${session.user.name || session.user.email}` : "John Doe"}</h3>
+                        <h3>{session ? `${name || session.user.email}` : "John Doe"}</h3>
                     </div>
 
                     <div className={navStyles.drop}>

@@ -1,5 +1,7 @@
-import { useSession } from 'next-auth/client'
+import { getSession, useSession } from 'next-auth/client'
+import { useEffect, useState } from 'react'
 import Link from "next/link"
+import axios from "axios"
 
 import ProfileFooter from "../../components/ProfileFooter"
 import ProfileNav from "../../components/ProfileNav"
@@ -9,16 +11,35 @@ import Meta from "../../components/Meta"
 import profileStyles from "../../styles/Profile.module.css"
 
 
-const Profile = () => {
+const Profile = ({  }) => {
 
+    const [user, setUser] = useState([]);
     const [session] = useSession();
-    console.log(session);
 
+
+    const getUser = async () => {
+        try {
+            const { data } = await axios.get('/api/user/profile');
+
+            if(data.err) {
+                alert(data.err);
+            }
+
+            setUser(data.user);
+        } catch (error) {
+            console.error(error.response.data.err);
+        }
+        
+    }
+
+    useEffect(() => {
+        getUser();
+    }, []);
 
     return (
         <div className={profileStyles.container}>
-            <Meta title={`${session.user.name}'s Profile`} />
-            <ProfileNav />
+            <Meta title={session ? `${session.user.name}'s profile` : "Unauthorized"} />
+            <ProfileNav src={user.image} name={user.name} />
 
             <main className={profileStyles.prof}>
                 {!session && <Unauthorized /> }
@@ -45,7 +66,7 @@ const Profile = () => {
                                     <h2>Photo</h2>
                                 </div>
                                 <div className={profileStyles.right}>
-                                    <img src={session.user.image} at="user profile photo" />
+                                    <img src={user.image} alt="user profile photo" />
                                 </div>
                             </div>
                             <div className={profileStyles.info}>
@@ -53,7 +74,7 @@ const Profile = () => {
                                     <h2>Name</h2>
                                 </div>
                                 <div className={profileStyles.right}>
-                                    <h5>{session.user.name}</h5>
+                                    <h5>{user.name}</h5>
                                 </div>
                             </div>
                             <div className={profileStyles.info}>
@@ -61,7 +82,7 @@ const Profile = () => {
                                     <h2>Bio</h2>
                                 </div>
                                 <div className={profileStyles.right}>
-                                    <h5>I am a MERN stack developer with a passion for solving problems</h5>
+                                    <h5>{user.bio ? user.bio : "Not specified"}</h5>
                                 </div>
                             </div>
                             <div className={profileStyles.info}>
@@ -69,7 +90,7 @@ const Profile = () => {
                                     <h2>Email</h2>
                                 </div>
                                 <div className={profileStyles.right}>
-                                    <h5>{session.user.email}</h5>
+                                    <h5>{user.email ? user.email : "Not Specified"}</h5>
                                 </div>
                             </div>
                             <div className={profileStyles.info}>
@@ -77,7 +98,7 @@ const Profile = () => {
                                     <h2>Phone</h2>
                                 </div>
                                 <div className={profileStyles.right}>
-                                    <h5>08166179988</h5>
+                                    <h5>{user.phone ? `0${user.phone}` : "Not Specified"}</h5>
                                 </div>
                             </div>
                             <div className={profileStyles.info}>
@@ -97,5 +118,23 @@ const Profile = () => {
         </div>
     )
 }
+
+// export async function getServerSideProps(context) {
+//     const session = await getSession(context)
+    
+//     if(!session){
+//       return {
+//         redirect: {
+//           destination: '/signup',
+//           permanent: false
+//         }
+//       }
+//     }
+    
+//     return {
+//       props: { session }
+//     }
+// }
+
 
 export default Profile

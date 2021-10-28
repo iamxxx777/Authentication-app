@@ -65,6 +65,22 @@
     width: 100%;
 }
 
+.profile_info .form {
+    padding-top: 0;
+}
+
+.profile_info form small {
+    color: #eb5757;
+    /* background-color: rgba(235, 87, 87, 0.3); */
+    padding: 0.4rem;
+    font-size: 13px;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    text-align: left;
+    width: 100%;
+    border-radius: 6px;
+}
+
 .form_img {
     display: flex;
     justify-content: flex-start;
@@ -74,13 +90,34 @@
 .form_img_div {
     margin-right: 20px;
     position: relative;
+    width: 52px;
+    height: 48px;
 }
 
 .form_img_div img {
-    width: 52px;
-    height: 48px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.form_img_div button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+}
+
+.form_img_div input {
+display: none;
 }
 
 .img_text p {
@@ -114,10 +151,10 @@
     border: 1px solid #BDBDBD;
     border-radius: 12px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 18px;
     letter-spacing: -0.035em;
-    color: #828282;
+    color: #a0a0a0;
     outline: none;
     font-family: inherit;
     height: 48px;
@@ -136,7 +173,7 @@
     resize: none;
 }
 
-.profile_info form button {
+.profile_info form > button {
     width: 82px;
     height: 38px;
     color: #fff;
@@ -197,7 +234,7 @@
         border-color: #2F80ED;
     }
 
-    .profile_info form button {
+    .profile_info form > button {
         margin-bottom: 2rem;
     }
 }

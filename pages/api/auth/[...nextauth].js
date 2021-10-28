@@ -60,12 +60,14 @@ export default NextAuth({
 
     callbacks: {
         session: async (session, user) => {
-            session.userId = user.sub
+            session.user.id = user.sub
+            session.user.bio = user.bio
+            session.user.phone = user.phone
+            session.user.cloudId = user.cloudId
             return Promise.resolve(session)
         }
     },
 
-    debug: true,
 });
 
 const logUser = async ({ user, password }) => {

@@ -2,6 +2,7 @@ import { getProviders, signIn, useSession } from "next-auth/client"
 import { useState, useEffect } from 'react'
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { toast } from "react-toastify"
 
 import Meta from "../components/Meta"
 import Provider from "../components/Provider"
@@ -27,10 +28,12 @@ const signUp = ({ providers }) => {
         setLoading(false);
 
         router.push('/profile');
+        toast.success('Login successful');
     }
 
     useEffect(() => {
         if(router.query.error) {
+            toast.error(router.query.error);
             setErrorMsg(router.query.error);
             setEmail(router.query.email);
         }
