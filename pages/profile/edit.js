@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 import ProfileNav from "../../components/ProfileNav"
 import ProfileFooter from "../../components/ProfileFooter"
 import Meta from "../../components/Meta"
-import Unauthorized from '../../components/UnAuthorized'
+import Unauthorized from '../../components/Unauthorized'
 import Loading from "../../components/Loading"
 
 import editStyles from "../../styles/Edit.module.css"
