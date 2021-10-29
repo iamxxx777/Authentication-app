@@ -5,7 +5,7 @@ import axios from "axios"
 
 import ProfileFooter from "../../components/ProfileFooter"
 import ProfileNav from "../../components/ProfileNav"
-import Unauthorized from '../../components/UnAuthorized'
+import Unauthorized from '../../components/Unauthorized'
 import Meta from "../../components/Meta"
 
 import profileStyles from "../../styles/Profile.module.css"
