@@ -80,12 +80,12 @@ const Edit = () => {
 
             setLoading(true);
             const { data } = await axios.put("/api/user/image", formData, config);
+            setLoading(false);
 
             if(data.success) {
                const res = await getUser();
             }
 
-            setLoading(false);
             toast.success("Image upload successful");
 
         } catch (error) {

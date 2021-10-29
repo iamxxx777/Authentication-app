@@ -25,7 +25,7 @@ apiRoute.put(async (req, res) => {
     
     try {
 
-        const session = await getSession({req});
+        const session = await getSession({ req });
         const id = session.user.id;
 
         const user = await Users.findById(id);

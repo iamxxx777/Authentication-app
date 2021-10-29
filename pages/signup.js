@@ -89,11 +89,6 @@ const signUp = ({ providers }) => {
                         ))
                     }
                     </div>
-
-
-                    <div className={styles.or}>
-                        <p>Already a member? <Link href="/signin">Login</Link></p>
-                    </div>
                 </div>
             </section>
 
