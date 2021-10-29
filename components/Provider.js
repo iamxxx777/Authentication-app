@@ -9,7 +9,7 @@ const Provider = ({ provider }) => {
 
     const handleClick = async () => {
         setLoading(true);
-        const res = await signIn(provider.id, { callbackUrl: 'http://localhost:3000/profile' });
+        const res = await signIn(provider.id, { callbackUrl: 'https://authentication-app-lake.vercel.app/profile' });
         setTimeout(() => {
             setLoading(false);
             toast.success('Login successful');
