@@ -60,6 +60,8 @@ export default NextAuth({
 
     callbacks: {
         session: async (session, user) => {
+            // specify the details you want added to the user session
+            // Name, email and image are added automatically
             session.user.id = user.sub
             session.user.bio = user.bio
             session.user.phone = user.phone

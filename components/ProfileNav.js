@@ -22,6 +22,7 @@ const ProfileNav = ({ src, name }) => {
 
     return (
         <header className={navStyles.header}>
+            <nav>
                 <div className={navStyles.logo}>
                     <img src="/devchallenges-light.svg" alt="logo" />
                 </div>
@@ -41,10 +42,10 @@ const ProfileNav = ({ src, name }) => {
                             <div className={navStyles.dropdown}>
                                 <ul>
                                     <li>
-                                        <Link href="/profile"><div><i className="fa fa-user-circle" aria-hidden="true"></i> <p>My Profile</p></div></Link>
+                                        <Link onClick={() => setDrop(false)} href="/profile"><div><i className="fa fa-user-circle" aria-hidden="true"></i> <p>My Profile</p></div></Link>
                                     </li>
                                     <li>
-                                        <Link href="/"><div><i className="fa fa-users" aria-hidden="true"></i> <p>Group Chat</p></div></Link>
+                                        <Link onClick={() => setDrop(false)} href="/profile"><div><i className="fa fa-users" aria-hidden="true"></i> <p>Group Chat</p></div></Link>
                                     </li>
                                     <hr />
                                     <li className={navStyles.logout}>
@@ -60,7 +61,9 @@ const ProfileNav = ({ src, name }) => {
                         }
                     </div>
                 </div>
-            </header>
+            </nav>
+                
+        </header>
     )
 }
 

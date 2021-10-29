@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">Authentication-app</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/iamxxx777/Authentication-app">
       Solution
     </a>
     <span> | </span>
@@ -37,22 +37,30 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://res.cloudinary.com/iamxxx777/image/upload/v1635526404/Authentication_feawch.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+This app documents how to use next-auth to implement authentication
+with a next.js app. Users are able to login or signup with their facebook, github or google account. They can also be done the good old way by providing an email and password. This app stores users credentials in a mongodb database for easy retrieval and update.
+
+This app is hosted for free on [Vercel](https://vercel.com).
+
+#### What you can do with this app
+
+- Sign up with a password and email
+- Sign up with either google, facebook or github account.
+- View Profile details returned from the providers.
+- Edit the profile details returned from the providers
+
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Next.js](https://nextjs.org/)
+- [Next-auth.js](https://next-auth.js.org/)
+- [MongoDB](https://mongodb.com/)
+- [Cloudinary](https://cloudinary.com/)
 
 ## Features
 
@@ -68,7 +76,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/iamxxx777/authentication-app
 
 # Install dependencies
 $ npm install
@@ -81,12 +89,10 @@ $ npm start
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Next-auth.js](https://next-auth.js.org/getting-started/client)
+- [Vercel](https://vercel.com)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [@iamxxx777](https://github.com/iamxxx777)
+- Twitter [@dayo_hope](https://twitter.com/dayo_hope)

@@ -26,23 +26,19 @@ apiRoute.put(async (req, res) => {
     try {
 
         const session = await getSession({req});
-        console.log("a");
         const id = session.user.id;
 
         const user = await Users.findById(id);
-        console.log("aa");
 
         if(!user) {
           res.status(200).json({error: "User does not exist"});
         }
 
         var data = {};
-        console.log("aaa");
-        
 
         if(req.file) {
-            console.log("aaaa");
             if (session.user.cloudId) {
+              // delete former image from the cloudbase
               await cloudinaryV.uploader.destroy(session.user.cloudId);
             }
 

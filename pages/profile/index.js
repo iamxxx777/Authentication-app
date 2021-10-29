@@ -1,4 +1,4 @@
-import { getSession, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 import { useEffect, useState } from 'react'
 import Link from "next/link"
 import axios from "axios"
@@ -16,6 +16,9 @@ const Profile = ({  }) => {
     const [user, setUser] = useState([]);
     const [session] = useSession();
 
+    // I choose to fetch the user data from the database instead of using the session data.
+    // I couldn't figure out a way to dynamically update the session data after an update.
+    // If you figured it out, please comment how
 
     const getUser = async () => {
         try {
@@ -119,22 +122,8 @@ const Profile = ({  }) => {
     )
 }
 
-// export async function getServerSideProps(context) {
-//     const session = await getSession(context)
-    
-//     if(!session){
-//       return {
-//         redirect: {
-//           destination: '/signup',
-//           permanent: false
-//         }
-//       }
-//     }
-    
-//     return {
-//       props: { session }
-//     }
-// }
+
+
 
 
 export default Profile

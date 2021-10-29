@@ -11,10 +11,10 @@ const Provider = ({ provider }) => {
         setLoading(true);
         const res = await signIn(provider.id, { callbackUrl: 'http://localhost:3000/profile' });
         setTimeout(() => {
-            setLoading(false)
+            setLoading(false);
+            toast.success('Login successful');
         }, 2500);
 
-        toast.success('Login successful');
     }
 
     return (

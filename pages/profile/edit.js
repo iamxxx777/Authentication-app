@@ -1,8 +1,8 @@
-import { useSession, getSession } from "next-auth/client"
+import { useSession } from "next-auth/client"
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import axios from "axios"
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
 import ProfileNav from "../../components/ProfileNav"
 import ProfileFooter from "../../components/ProfileFooter"
@@ -114,7 +114,6 @@ const Edit = () => {
             } 
 
             toast.success('Profile update successful')
-            await getSession();
             router.push("/profile");
 
         } catch (error) {
